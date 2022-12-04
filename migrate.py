@@ -24,7 +24,7 @@ init_env_path(__file__)
 from flask_script import Manager
 from flask_migrate import Migrate,MigrateCommand
 from apps import create_app
-from apps.blog.model.permission import db
+from apps.blog.model import db
 
 
 app = create_app()

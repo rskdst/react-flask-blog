@@ -11,4 +11,4 @@
 from flask import jsonify
 
 def jsonApi(data,code=200,message="请求成功"):
-    return jsonify({'code' :code,'data': data,'message':message})
+    return jsonify({'code':code,'data': data,'message':message})
