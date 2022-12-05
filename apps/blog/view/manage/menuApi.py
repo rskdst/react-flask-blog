@@ -11,6 +11,7 @@
 from flask import Blueprint, request, abort
 from blog.apps.utils.constants import METHODTYPE
 from apps.utils.interface import jsonApi
+from apps.utils.db import queryToDict
 from apps.blog.model import Menu,db
 from flask_jwt_extended import jwt_required
 
@@ -22,10 +23,10 @@ menu = Blueprint('menu', __name__, url_prefix='/api/menu')
 #     return jsonApi(menu_list)
 
 # 获取菜单列表
-@menu.route("/Menu",methods=[METHODTYPE.GET])
+@menu.route("/menu",methods=[METHODTYPE.GET])
 @jwt_required()
 def get_tree_menu():
-    menu_list = [x.to_dict() for x in Menu.query.all()]
+    menu_list = queryToDict(Menu.query.all())
     routes = get_trees(menu_list)
     return jsonApi(routes)
 
@@ -34,8 +35,6 @@ def get_tree_menu():
 @menu.route('/addMenu',methods=[METHODTYPE.POST])
 @jwt_required()
 def add_menu():
-    if request.method == METHODTYPE.GET:
-        return jsonApi("请求失败",500)
     data = request.form
     menu_obj = Menu(
         label=data['label'],
@@ -58,8 +57,6 @@ def add_menu():
 @menu.route('/editMenu',methods=[METHODTYPE.POST])
 @jwt_required()
 def edit_menu():
-    if request.method == METHODTYPE.GET:
-        abort(405)
     data = request.form
     db.session.query(Menu).filter(Menu.id == data["id"]).update(data.to_dict())
     db.session.commit()

@@ -3290,3 +3290,299 @@
 [2022-12-04 20:26:58,862] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 20:26:58] "GET /api/menu/Menu HTTP/1.1" 200 -
 [2022-12-04 20:28:30,837] INFO in manage: run server at port 8080
 [2022-12-04 20:28:30,935] INFO in manage: run server at port 8080
+[2022-12-04 21:35:49,072] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+[2022-12-04 21:35:49,072] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2022-12-04 21:35:49,077] INFO in _internal:  * Restarting with stat
+[2022-12-04 21:35:53,466] WARNING in _internal:  * Debugger is active!
+[2022-12-04 21:35:53,488] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-04 21:35:58,669] INFO in manage: run server at port 8080
+[2022-12-04 21:35:58,766] INFO in manage: run server at port 8080
+[2022-12-04 21:38:11,592] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+[2022-12-04 21:38:11,592] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2022-12-04 21:38:11,596] INFO in _internal:  * Restarting with stat
+[2022-12-04 21:38:15,659] WARNING in _internal:  * Debugger is active!
+[2022-12-04 21:38:15,676] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-04 21:38:23,263] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:38:23] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:38:23,533] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:38:23] "[31m[1mGET /api/menu/Menu HTTP/1.1[0m" 401 -
+[2022-12-04 21:38:38,355] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:38:38] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:38:38,666] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:38:38] "[31m[1mGET /api/menu/Menu HTTP/1.1[0m" 401 -
+[2022-12-04 21:40:01,766] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:40:01] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:40:02,018] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:40:02] "[31m[1mGET /api/menu/Menu HTTP/1.1[0m" 401 -
+[2022-12-04 21:40:10,612] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:40:10] "OPTIONS /api/user/login HTTP/1.1" 200 -
+[2022-12-04 21:40:10,969] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:40:10] "POST /api/user/login HTTP/1.1" 200 -
+[2022-12-04 21:40:11,836] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:40:11] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:40:12,170] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:40:12] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:40:33,399] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:40:33] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:40:33,725] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:40:33] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:42:03,073] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:42:03] "OPTIONS /api/menu/editMenu HTTP/1.1" 200 -
+[2022-12-04 21:42:03,375] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:42:03] "POST /api/menu/editMenu HTTP/1.1" 200 -
+[2022-12-04 21:42:40,814] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:42:40] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:42:41,095] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:42:41] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:50:07,088] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:50:07] "OPTIONS /api/menu/editMenu HTTP/1.1" 200 -
+[2022-12-04 21:50:07,364] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:50:07] "POST /api/menu/editMenu HTTP/1.1" 200 -
+[2022-12-04 21:50:18,193] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:50:18] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:50:18,513] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:50:18] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:57:16,453] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:57:16] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:57:16,718] INFO in _internal: 127.0.0.1 - - [04/Dec/2022 21:57:16] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-04 21:57:27,195] INFO in manage: run server at port 8080
+[2022-12-04 21:57:27,364] INFO in manage: run server at port 8080
+[2022-12-05 19:44:25,073] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+[2022-12-05 19:44:25,073] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2022-12-05 19:44:25,078] INFO in _internal:  * Restarting with stat
+[2022-12-05 19:44:29,428] WARNING in _internal:  * Debugger is active!
+[2022-12-05 19:44:29,449] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 19:44:37,901] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:44:37] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:44:38,151] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:44:38] "[31m[1mGET /api/menu/Menu HTTP/1.1[0m" 401 -
+[2022-12-05 19:44:44,623] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:44:44] "OPTIONS /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:44:44,990] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:44:44] "POST /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:44:45,184] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:44:45] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:44:45,494] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:44:45] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:45:02,873] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:45:02] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:45:03,189] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:45:03] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:04,018] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:04] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:04,277] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:04] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:16,580] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:16] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:16,894] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:16] "[31m[1mGET /api/menu/Menu HTTP/1.1[0m" 422 -
+[2022-12-05 19:47:24,154] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:24] "OPTIONS /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:47:24,485] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:24] "POST /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:47:24,958] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:24] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:25,297] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:25] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:29,123] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:29] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:35,122] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:35] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:35,383] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:35] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:53,663] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:53] "OPTIONS /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:47:53,974] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:53] "POST /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:47:54,226] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:54] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:47:54,473] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:47:54] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:48:06,424] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:06] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:48:06,736] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:06] "[31m[1mGET /api/menu/Menu HTTP/1.1[0m" 422 -
+[2022-12-05 19:48:12,287] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:12] "OPTIONS /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:48:12,616] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:12] "POST /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:48:13,537] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:13] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:48:13,856] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:13] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:48:17,307] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:17] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:48:17,645] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:17] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:48:26,703] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:26] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:48:27,012] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:27] "[31m[1mGET /api/menu/Menu HTTP/1.1[0m" 422 -
+[2022-12-05 19:48:32,210] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:32] "OPTIONS /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:48:32,534] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:32] "POST /api/user/login HTTP/1.1" 200 -
+[2022-12-05 19:48:33,375] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:33] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:48:33,711] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:48:33] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:54:37,694] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:54:37] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:54:37,952] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:54:37] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:54:55,971] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:54:55] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:54:56,297] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:54:56] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:55:12,031] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:55:12] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:55:12,363] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:55:12] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:55:34,581] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:55:34] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:55:34,901] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:55:34] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:56:55,350] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:56:55] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:56:55,601] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:56:55] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:57:17,278] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:57:17] "OPTIONS /api/menu/editMenu HTTP/1.1" 200 -
+[2022-12-05 19:57:17,608] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:57:17] "POST /api/menu/editMenu HTTP/1.1" 200 -
+[2022-12-05 19:57:21,932] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:57:21] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 19:57:22,252] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 19:57:22] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 20:04:28,123] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\utils\\interface.py', reloading
+[2022-12-05 20:04:28,227] INFO in _internal:  * Restarting with stat
+[2022-12-05 20:04:32,610] WARNING in _internal:  * Debugger is active!
+[2022-12-05 20:04:32,633] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 20:07:45,500] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\model\\__init__.py', reloading
+[2022-12-05 20:07:45,602] INFO in _internal:  * Restarting with stat
+[2022-12-05 20:07:50,180] WARNING in _internal:  * Debugger is active!
+[2022-12-05 20:07:50,210] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 20:07:52,921] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\model\\__init__.py', reloading
+[2022-12-05 20:07:53,018] INFO in _internal:  * Restarting with stat
+[2022-12-05 20:49:03,855] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+[2022-12-05 20:49:03,855] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2022-12-05 20:49:03,859] INFO in _internal:  * Restarting with stat
+[2022-12-05 20:49:08,275] WARNING in _internal:  * Debugger is active!
+[2022-12-05 20:49:08,292] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 20:49:08,534] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:49:08] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 20:49:09,266] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:49:09] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 20:49:09,582] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:49:09] "[31m[1mGET /api/menu/Menu HTTP/1.1[0m" 401 -
+[2022-12-05 20:49:18,418] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:49:18] "OPTIONS /api/user/login HTTP/1.1" 200 -
+[2022-12-05 20:49:18,798] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:49:18] "POST /api/user/login HTTP/1.1" 200 -
+[2022-12-05 20:49:19,598] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:49:19] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 20:49:19,923] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:49:19] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 20:53:39,342] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:53:39] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 20:53:39,605] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:53:39] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 20:54:01,982] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:54:01] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 20:54:02,301] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 20:54:02] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 21:03:48,468] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:03:48] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 21:03:48,732] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:03:48] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 21:09:45,889] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:09:45] "OPTIONS /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 21:09:46,158] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:09:46] "GET /api/menu/Menu HTTP/1.1" 200 -
+[2022-12-05 21:26:01,405] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:26:01] "[33mOPTIONS /api/menu HTTP/1.1[0m" 404 -
+[2022-12-05 21:26:08,978] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\menuApi.py', reloading
+[2022-12-05 21:26:09,129] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:26:13,428] WARNING in _internal:  * Debugger is active!
+[2022-12-05 21:26:13,445] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 21:31:32,231] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:31:32] "[32mOPTIONS /api/menu HTTP/1.1[0m" 308 -
+[2022-12-05 21:32:56,437] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\model\\__init__.py', reloading
+[2022-12-05 21:32:56,550] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:41:35,174] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+[2022-12-05 21:41:35,174] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2022-12-05 21:41:35,179] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:41:39,231] WARNING in _internal:  * Debugger is active!
+[2022-12-05 21:41:39,248] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 21:41:43,925] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:41:43] "[32mOPTIONS /api/menu HTTP/1.1[0m" 308 -
+[2022-12-05 21:42:30,087] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:42:30] "[32mOPTIONS /api/menu HTTP/1.1[0m" 308 -
+[2022-12-05 21:43:30,068] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\menuApi.py', reloading
+[2022-12-05 21:43:30,173] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:43:34,421] WARNING in _internal:  * Debugger is active!
+[2022-12-05 21:43:34,448] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 21:43:37,791] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:43:37] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:43:38,051] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:43:38] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:43:38,242] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:43:38] "[32mOPTIONS /api/user HTTP/1.1[0m" 308 -
+[2022-12-05 21:43:58,707] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\userApi.py', reloading
+[2022-12-05 21:43:58,795] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:44:03,140] WARNING in _internal:  * Debugger is active!
+[2022-12-05 21:44:03,159] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 21:44:06,018] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:06] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:44:06,313] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:06] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:44:06,508] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:06] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 21:44:06,846] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:06] "[35m[1mPOST /api/user/user HTTP/1.1[0m" 500 -
+[2022-12-05 21:44:18,078] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:18] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:44:18,400] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:18] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:44:18,644] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:18] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 21:44:18,927] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:18] "[35m[1mPOST /api/user/user HTTP/1.1[0m" 500 -
+[2022-12-05 21:44:43,734] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\model\\__init__.py', reloading
+[2022-12-05 21:44:43,848] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:44:48,340] WARNING in _internal:  * Debugger is active!
+[2022-12-05 21:44:48,359] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 21:44:48,566] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:48] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:44:48,590] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:48] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:44:49,096] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:49] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 21:44:49,366] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:49] "[35m[1mPOST /api/user/user HTTP/1.1[0m" 500 -
+[2022-12-05 21:44:55,643] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:44:55] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:47:10,196] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\menuApi.py', reloading
+[2022-12-05 21:47:10,303] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:47:14,984] WARNING in _internal:  * Debugger is active!
+[2022-12-05 21:47:15,002] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 21:47:15,203] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:47:15] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:47:15,536] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:47:15] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:47:39,068] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:47:39] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:48:18,342] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:48:18] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:48:24,273] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:48:24] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:48:28,181] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:48:28] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:48:31,256] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:48:31] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:48:31,257] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:48:31] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:49:57,075] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:49:57] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:49:57,333] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:49:57] "[31m[1mGET /api/menu/menu HTTP/1.1[0m" 401 -
+[2022-12-05 21:50:05,665] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:05] "OPTIONS /api/user/login HTTP/1.1" 200 -
+[2022-12-05 21:50:05,988] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:05] "POST /api/user/login HTTP/1.1" 200 -
+[2022-12-05 21:50:06,942] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:06] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:50:13,345] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:13] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:50:17,544] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:17] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:50:17,552] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:17] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:50:26,877] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:26] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:50:27,197] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:27] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:50:42,706] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:42] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:50:43,026] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:50:43] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:51:00,223] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:51:00] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:51:15,144] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:51:15] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:51:17,636] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:51:17] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:51:17,982] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:51:17] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:51:24,214] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:51:24] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:51:24,545] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:51:24] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:51:30,647] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:51:30] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:53:02,339] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:53:02] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:53:06,751] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:53:06] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:53:07,009] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:53:07] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:53:33,954] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\model\\__init__.py', reloading
+[2022-12-05 21:53:34,056] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:53:38,206] WARNING in _internal:  * Debugger is active!
+[2022-12-05 21:53:38,224] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 21:54:23,451] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\userApi.py', reloading
+[2022-12-05 21:54:23,673] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:54:28,837] WARNING in _internal:  * Debugger is active!
+[2022-12-05 21:54:28,870] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 21:54:30,405] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:54:30] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:54:30,675] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:54:30] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:54:36,963] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:54:36] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:54:37,284] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:54:37] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 21:54:40,509] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:54:40] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 21:54:40,852] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:54:40] "POST /api/user/user HTTP/1.1" 200 -
+[2022-12-05 21:55:10,966] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:55:10] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 21:55:11,281] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:55:11] "POST /api/user/user HTTP/1.1" 200 -
+[2022-12-05 21:55:48,207] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:55:48] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 21:55:48,517] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:55:48] "POST /api/user/user HTTP/1.1" 200 -
+[2022-12-05 21:58:22,115] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\utils\\db.py', reloading
+[2022-12-05 21:58:22,223] INFO in _internal:  * Restarting with stat
+[2022-12-05 21:58:27,096] WARNING in _internal:  * Debugger is active!
+[2022-12-05 21:58:27,117] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 21:58:27,323] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 21:58:27] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:00:01,937] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:00:01] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:00:06,249] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\utils\\db.py', reloading
+[2022-12-05 22:00:06,396] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:00:11,279] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:00:11,298] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:00:11,504] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:00:11] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:00:14,499] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:00:14] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:00:14,995] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:00:14] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:00:15,252] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:00:15] "POST /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:02:06,135] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\menuApi.py', reloading
+[2022-12-05 22:02:06,244] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:02:10,701] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:02:10,720] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:02:16,323] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:02:16] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:04:10,189] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\menuApi.py', reloading
+[2022-12-05 22:04:10,292] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:04:14,753] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:04:14,770] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:04:21,267] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:04:21] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:04:21,575] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:04:21] "[35m[1mGET /api/menu/menu HTTP/1.1[0m" 500 -
+[2022-12-05 22:04:38,635] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:04:38] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:05:49,485] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\menuApi.py', reloading
+[2022-12-05 22:05:49,619] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:05:53,908] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:05:53,926] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:07:47,391] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\utils\\db.py', reloading
+[2022-12-05 22:07:47,479] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:07:51,602] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:07:51,620] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:08:17,736] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\utils\\db.py', reloading
+[2022-12-05 22:08:17,827] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:08:21,828] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:08:21,845] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:09:05,568] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\utils\\db.py', reloading
+[2022-12-05 22:09:05,654] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:09:10,124] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:09:10,143] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:09:10,343] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:09:10] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:09:12,302] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:09:12] "[35m[1mGET /api/menu/menu HTTP/1.1[0m" 500 -
+[2022-12-05 22:09:17,138] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:09:17] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:09:17,406] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:09:17] "[35m[1mGET /api/menu/menu HTTP/1.1[0m" 500 -
+[2022-12-05 22:09:29,362] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\menuApi.py', reloading
+[2022-12-05 22:09:29,453] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:09:34,007] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:09:34,025] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:09:34,239] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:09:34] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:09:34,265] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:09:34] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:09:34,748] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:09:34] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:09:35,017] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:09:35] "[35m[1mPOST /api/user/user HTTP/1.1[0m" 500 -
+[2022-12-05 22:09:58,140] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\blog\\view\\manage\\userApi.py', reloading
+[2022-12-05 22:09:58,233] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:10:02,942] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:10:02,961] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:10:03,157] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:10:03] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:10:03,184] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:10:03] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:10:05,290] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:10:05] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:10:05,554] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:10:05] "POST /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:11:33,824] INFO in _internal:  * Detected change in 'D:\\_flask\\blog\\apps\\utils\\db.py', reloading
+[2022-12-05 22:11:33,957] INFO in _internal:  * Restarting with stat
+[2022-12-05 22:11:38,313] WARNING in _internal:  * Debugger is active!
+[2022-12-05 22:11:38,331] INFO in _internal:  * Debugger PIN: 547-770-754
+[2022-12-05 22:11:44,681] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:11:44] "OPTIONS /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:11:44,963] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:11:44] "GET /api/menu/menu HTTP/1.1" 200 -
+[2022-12-05 22:11:45,144] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:11:45] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:11:45,474] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:11:45] "POST /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:11:52,493] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:11:52] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:11:52,805] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:11:52] "POST /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:12:03,116] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:12:03] "OPTIONS /api/user/user HTTP/1.1" 200 -
+[2022-12-05 22:12:03,429] INFO in _internal: 127.0.0.1 - - [05/Dec/2022 22:12:03] "POST /api/user/user HTTP/1.1" 200 -

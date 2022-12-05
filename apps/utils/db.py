@@ -6,51 +6,72 @@
 @version: 1.0.0
 @file: db.py
 @time: 2022/11/26 22:30
-@brief db
+@brief db操作
 """
 import base64
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
 db = SQLAlchemy()
 pymysql.install_as_MySQLdb()
-import json
-from sqlalchemy.ext.declarative import DeclarativeMeta
-# 解析处理类
-class AlchemyEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj.__class__, DeclarativeMeta):
+from datetime import datetime as cdatetime
+from datetime import date,time
+from flask_sqlalchemy import Model
+from sqlalchemy import DateTime,Numeric,Date,Time
 
-            fields = {}
-            for field in  [x for x in dir(obj) if not x.startswith('query') and x != 'metadata' and not x.startswith('_')]:
-                data = obj.__getattribute__(field)
-                try:
-                    if isinstance(data, bytes):
-                        data = base64.b64encode(data)
-                    json.dumps(data)
-                    fields[field] = data
-                except TypeError:
-                    fields[field] = None
-            return fields
-        return json.JSONEncoder.default(self, obj)
-
-def model_to_dict(result):
-    from collections import Iterable
-    # 转换完成后，删除  '_sa_instance_state' 特殊属性
-    try:
-        if isinstance(result, Iterable):
-            tmp = []
-            for res in result:
-                key = res.__dict__.keys()
-                value = res.__dict__.values()
-                if isinstance(value, bytes):
-                    value = str(value, encoding='utf-8')
-                tmp.append(dict(zip(key, value)))
-            for t in tmp:
-                t.pop('_sa_instance_state')
+def queryToDict(models):
+    if(isinstance(models,list)):
+        if(isinstance(models[0],Model)):
+            lst = []
+            for model in models:
+                gen = model_to_dict(model)
+                dit = dict((g[0],g[1]) for g in gen)
+                lst.append(dit)
+            return lst
         else:
-            tmp = dict(zip(result.__dict__.keys(), result.__dict__.values()))
-            tmp.pop('_sa_instance_state')
-        return tmp
-    except BaseException as e:
-        print(e.args)
-        raise TypeError('Type error of parameter')
+            res = result_to_dict(models)
+            return res
+    else:
+        if (isinstance(models, Model)):
+            gen = model_to_dict(models)
+            dit = dict((g[0],g[1]) for g in gen)
+            return dit
+        else:
+            res = dict(zip(models.keys(), models))
+            find_datetime(res)
+            return res
+
+
+#当结果为result对象列表时，result有key()方法
+def result_to_dict(results):
+    res = [dict(zip(r.keys(), r)) for r in results]
+    #这里r为一个字典，对象传递直接改变字典属性
+    for r in res:
+        find_datetime(r)
+    return res
+
+def model_to_dict(model):      #这段来自于参考资源
+    for col in model.__table__.columns:
+        if isinstance(col.type, DateTime):
+            value = convert_datetime(getattr(model, col.name))
+        elif isinstance(col.type, Numeric):
+            value = float(getattr(model, col.name))
+        else:
+            value = getattr(model, col.name)
+        yield (col.name, value)
+
+def find_datetime(value):
+    for v in value:
+        if (isinstance(value[v], cdatetime)):
+            value[v] = convert_datetime(value[v])   #这里原理类似，修改的字典对象，不用返回即可修改
+
+
+def convert_datetime(value):
+    if value:
+        if(isinstance(value,(cdatetime,DateTime))):
+            return value.strftime("%Y-%m-%d %H:%M:%S")
+        elif(isinstance(value,(date,Date))):
+            return value.strftime("%Y-%m-%d")
+        elif(isinstance(value,(Time,time))):
+            return value.strftime("%H:%M:%S")
+    else:
+        return ""

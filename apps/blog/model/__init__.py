@@ -8,7 +8,7 @@
 @time: 2022/12/4 13:05
 @brief
 """
-
+import datetime
 from apps.utils.db import db
 from sqlalchemy import ForeignKey
 
@@ -28,19 +28,6 @@ class Menu(BaseModel):
     weight = db.Column(db.Integer,nullable=False) # 权重
     state = db.Column(db.String(1)) # 是否启用
 
-    def to_dict(self):
-        return {
-            "id":self.id,
-            "label":self.label,
-            "pid":self.pid,
-            "pname":self.pname,
-            "icon":self.icon,
-            "routepath":self.routePath,
-            "componentpath":self.componentPath,
-            "weight":self.weight,
-            "state":self.state
-        }
-
 # 角色
 class Role(BaseModel):
     rolename = db.Column(db.String(10),unique=True) # 角色名字
@@ -54,6 +41,8 @@ class User(BaseModel):
     mail = db.Column(db.String(30),unique=True,nullable=True) # 邮箱
     id_card = db.Column(db.String(18),unique=True,nullable=True) # 身份证号
     state = db.Column(db.Integer,default=1) # 状态
+    create_date = db.Column(db.DateTime, default=datetime.datetime.now) # 创建时间
+    update_date = db.Column(db.DateTime, default=datetime.datetime.now, onupdate=datetime.datetime.now) # 更新时间
     role_id = db.Column(db.Integer,ForeignKey("role.id"),default=1) # 角色id
 
     def verify_password(self, password):
