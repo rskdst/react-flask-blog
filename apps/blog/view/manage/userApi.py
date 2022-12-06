@@ -13,7 +13,7 @@ from flask import Blueprint, request, make_response
 from blog.apps.utils.constants import METHODTYPE
 from apps.utils.interface import jsonApi
 from apps.utils.db import queryToDict
-from apps.blog.model import User,db
+from apps.blog.model import User,Role,db
 from sqlalchemy import exists,or_
 
 from flask_jwt_extended import create_access_token
@@ -24,7 +24,8 @@ user = Blueprint('user', __name__, url_prefix='/api/user')
 # 获取用户数据
 @user.route("/user",methods=[METHODTYPE.POST])
 def get_users():
-    user = queryToDict(User.query.all())
+    user_list = db.session.query(User,Role.rolename).filter(User.role_id==Role.id).all()
+    user = [user[0].to_dict(user[1]) for user in user_list]
     return jsonApi(user)
 
 # 新增用户

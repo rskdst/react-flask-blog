@@ -45,6 +45,20 @@ class User(BaseModel):
     update_date = db.Column(db.DateTime, default=datetime.datetime.now, onupdate=datetime.datetime.now) # 更新时间
     role_id = db.Column(db.Integer,ForeignKey("role.id"),default=1) # 角色id
 
+    def to_dict(self,rolename):
+        return {
+            "username":self.username,
+            "password":self.password,
+            "phone":self.phone,
+            "mail":self.mail,
+            "id_card":self.id_card,
+            "state":self.state,
+            "create_date":self.create_date.strftime("%Y-%m-%d %H:%M:%S"),
+            "update_date":self.update_date.strftime("%Y-%m-%d %H:%M:%S"),
+            "role_id":self.role_id,
+            "rolename":rolename,
+        }
+
     def verify_password(self, password):
         """校验密码"""
         return password == self.password
