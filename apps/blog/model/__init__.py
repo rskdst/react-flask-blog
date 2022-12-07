@@ -10,40 +10,62 @@
 """
 import datetime
 from apps.utils.db import db
-from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
+from sqlalchemy import Column,String,Integer,text,DateTime,ForeignKey,Table
 
 class BaseModel(db.Model):
     __abstract__ = True
-    id = db.Column(db.Integer,primary_key=True,autoincrement=True)
+    id = Column(Integer,primary_key=True,nullable=False,autoincrement=True,comment="id")
 
+# 菜单角色表
+menu_to_role = Table(
+    "menu_to_role",db.metadata,
+    Column("menu_id",Integer,ForeignKey("menu.id")),
+    Column("role_id",Integer,ForeignKey("role.id")),
+)
 # 菜单列表
 class Menu(BaseModel):
     __tablename__ = "menu"
-    label = db.Column(db.String(20),unique=True,nullable=False) # 菜单名称
-    pid = db.Column(db.Integer) # 父级菜单id
-    pname = db.Column(db.String(20)) # 父级菜单名称
-    icon = db.Column(db.String(40)) # 图标
-    routePath = db.Column(db.String(100),nullable=False) # 路由地址
-    componentPath = db.Column(db.String(100),nullable=False) # 组件地址
-    weight = db.Column(db.Integer,nullable=False) # 权重
-    state = db.Column(db.String(1)) # 是否启用
+    label = Column(String(20),unique=True,nullable=False,comment="菜单名称")
+    pid = Column(Integer,comment="父级菜单id")
+    pname = Column(String(20),comment="父级菜单名称")
+    icon = Column(String(40),comment="图标")
+    routePath = Column(String(100),nullable=False,comment="路由地址")
+    componentPath = Column(String(100),nullable=False,comment="组件地址")
+    weight = Column(Integer,nullable=False,comment="权重")
+    state = Column(String(1),comment="是否启用")
+
+    roles = relationship("Role",secondary=menu_to_role,backref="menus")
 
 # 角色
 class Role(BaseModel):
-    rolename = db.Column(db.String(10),unique=True) # 角色名字
+    rolename = Column(String(10),unique=True,comment="角色名字")
+    did = Column(Integer,ForeignKey("department.id"),default=1,server_default="1",nullable=False,comment="所属部门")
+    create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'),comment="创建时间")
+    update_date = Column(DateTime,  server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),comment="更新时间")
 
+    users = relationship("User",backref="role")
+
+# 部门
+class Department(BaseModel):
+    department_name = Column(String(20),unique=True,comment="部门名字")
+    pid = Column(Integer,comment="父级部门id")
+    create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'),comment="创建时间")
+    update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),comment="更新时间")
+
+    roles = relationship("Role",backref="department")
 
 # 用户表
 class User(BaseModel):
-    username = db.Column(db.String(20),unique=True,nullable=True) # 用户名
-    password = db.Column(db.String(20)) # 密码
-    phone = db.Column(db.String(11),unique=True,nullable=True) # 手机号
-    mail = db.Column(db.String(30),unique=True,nullable=True) # 邮箱
-    id_card = db.Column(db.String(18),unique=True,nullable=True) # 身份证号
-    state = db.Column(db.Integer,default=1) # 状态
-    create_date = db.Column(db.DateTime, default=datetime.datetime.now) # 创建时间
-    update_date = db.Column(db.DateTime, default=datetime.datetime.now, onupdate=datetime.datetime.now) # 更新时间
-    role_id = db.Column(db.Integer,ForeignKey("role.id"),default=1) # 角色id
+    username = Column(String(20),unique=True,nullable=True,comment="用户名")
+    password = Column(String(20),comment="密码")
+    phone = Column(String(11),unique=True,nullable=True,comment="手机号")
+    mail = Column(String(30),unique=True,nullable=True,comment="邮箱")
+    id_card = Column(String(18),unique=True,nullable=True,comment="身份证号")
+    state = Column(Integer,default=1,server_default="1",comment="状态")
+    create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'),comment="创建时间")
+    update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),comment="更新时间")
+    role_id = Column(Integer,ForeignKey("role.id"),default=1,server_default="1",nullable=False,comment="角色id")
 
     def to_dict(self,rolename):
         return {
