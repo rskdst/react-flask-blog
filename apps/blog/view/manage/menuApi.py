@@ -41,8 +41,10 @@ def add_menu():
         pid=data['pid'],
         pname=data['pname'],
         icon=data['icon'],
-        routePath=data['routePath'],
-        componentPath=data['componentPath'],
+        routepath=data['routepath'],
+        componentpath=data['componentpath'],
+        type=data['type'],
+        permission=data['permission'],
         weight=data["weight"],
         state=data['state']
     )

@@ -30,8 +30,10 @@ class Menu(BaseModel):
     pid = Column(Integer,comment="父级菜单id")
     pname = Column(String(20),comment="父级菜单名称")
     icon = Column(String(40),comment="图标")
-    routePath = Column(String(100),nullable=False,comment="路由地址")
-    componentPath = Column(String(100),nullable=False,comment="组件地址")
+    routepath = Column(String(100),nullable=False,comment="路由地址")
+    componentpath = Column(String(100),nullable=False,comment="组件地址")
+    type = Column(String(10),nullable=True,comment="类型")
+    permission = Column(String(100),comment="权限标记")
     weight = Column(Integer,nullable=False,comment="权重")
     state = Column(String(1),comment="是否启用")
 
@@ -40,7 +42,8 @@ class Menu(BaseModel):
 # 角色
 class Role(BaseModel):
     rolename = Column(String(10),unique=True,comment="角色名字")
-    did = Column(Integer,ForeignKey("department.id"),default=1,server_default="1",nullable=False,comment="所属部门")
+
+    # did = Column(Integer,ForeignKey("department.id"),default=1,server_default="1",nullable=False,comment="所属部门")
     create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'),comment="创建时间")
     update_date = Column(DateTime,  server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),comment="更新时间")
 
@@ -53,7 +56,7 @@ class Department(BaseModel):
     create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'),comment="创建时间")
     update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),comment="更新时间")
 
-    roles = relationship("Role",backref="department")
+    # roles = relationship("Role",backref="department")
 
 # 用户表
 class User(BaseModel):

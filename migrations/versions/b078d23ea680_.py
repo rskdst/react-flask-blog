@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: e7f9febbdb4b
+Revision ID: b078d23ea680
 Revises: 
-Create Date: 2022-12-07 22:23:17.238722
+Create Date: 2022-12-09 19:55:50.377542
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'e7f9febbdb4b'
+revision = 'b078d23ea680'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -33,8 +33,10 @@ def upgrade():
     sa.Column('pid', sa.Integer(), nullable=True, comment='父级菜单id'),
     sa.Column('pname', sa.String(length=20), nullable=True, comment='父级菜单名称'),
     sa.Column('icon', sa.String(length=40), nullable=True, comment='图标'),
-    sa.Column('routePath', sa.String(length=100), nullable=False, comment='路由地址'),
-    sa.Column('componentPath', sa.String(length=100), nullable=False, comment='组件地址'),
+    sa.Column('routepath', sa.String(length=100), nullable=False, comment='路由地址'),
+    sa.Column('componentpath', sa.String(length=100), nullable=False, comment='组件地址'),
+    sa.Column('type', sa.String(length=10), nullable=True, comment='类型'),
+    sa.Column('permission', sa.String(length=100), nullable=True, comment='权限标记'),
     sa.Column('weight', sa.Integer(), nullable=False, comment='权重'),
     sa.Column('state', sa.String(length=1), nullable=True, comment='是否启用'),
     sa.PrimaryKeyConstraint('id'),
@@ -43,10 +45,8 @@ def upgrade():
     op.create_table('role',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False, comment='id'),
     sa.Column('rolename', sa.String(length=10), nullable=True, comment='角色名字'),
-    sa.Column('did', sa.Integer(), server_default='1', nullable=True, comment='所属部门'),
     sa.Column('create_date', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=True, comment='创建时间'),
     sa.Column('update_date', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), nullable=True, comment='更新时间'),
-    sa.ForeignKeyConstraint(['did'], ['department.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('rolename')
     )
@@ -66,7 +66,7 @@ def upgrade():
     sa.Column('state', sa.Integer(), server_default='1', nullable=True, comment='状态'),
     sa.Column('create_date', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=True, comment='创建时间'),
     sa.Column('update_date', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), nullable=True, comment='更新时间'),
-    sa.Column('role_id', sa.Integer(), server_default='1', nullable=True, comment='角色id'),
+    sa.Column('role_id', sa.Integer(), server_default='1', nullable=False, comment='角色id'),
     sa.ForeignKeyConstraint(['role_id'], ['role.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('id_card'),
