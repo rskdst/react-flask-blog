@@ -9,7 +9,7 @@ class BaseConfig:
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:950824@localhost:3306/blog'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:lj950824@localhost:3306/blog'
     SQLALCHEMY_POOL_SIZE = 30
     SQLALCHEMY_POOL_TIMEOUT = 30            # 30s
     SQLALCHEMY_POOL_RECYCLE = 60 * 60       # 1 hour

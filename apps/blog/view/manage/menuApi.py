@@ -17,19 +17,21 @@ from flask_jwt_extended import jwt_required
 
 menu = Blueprint('menu', __name__, url_prefix='/api/menu')
 
-# @menu.route("/MenuList",methods=[METHODTYPE.GET])
-# def get_menu():
-#     menu_list = [x.to_dict() for x in Menu.query.all()]
-#     return jsonApi(menu_list)
-
 # 获取菜单列表
 @menu.route("/menu",methods=[METHODTYPE.GET])
 @jwt_required()
 def get_tree_menu():
-    menu_list = queryToDict(Menu.query.all())
+    menu_list = queryToDict(db.session.query(Menu).filter(Menu.type!="按钮").all())
     routes = get_trees(menu_list)
     return jsonApi(routes)
 
+# 获取完整菜单列表
+@menu.route("/menu_list",methods=[METHODTYPE.GET])
+@jwt_required()
+def get_menu_list():
+    menu_list = queryToDict(db.session.query(Menu).all())
+    routes = get_trees(menu_list)
+    return jsonApi(routes)
 
 # 新增菜单
 @menu.route('/addMenu',methods=[METHODTYPE.POST])

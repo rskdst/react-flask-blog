@@ -1,8 +1,9 @@
-from .api import api
+
 from .manage.menuApi import menu
 from .manage.userApi import user
+from .manage.roleApi import role
 
-bps = [api,menu,user]
+bps = [menu,user,role]
 
 
 def init_blue_print(app):
