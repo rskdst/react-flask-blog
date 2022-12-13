@@ -26,7 +26,7 @@ def get_tree_menu():
     return jsonApi(routes)
 
 # 获取完整菜单列表
-@menu.route("/menu_list",methods=[METHODTYPE.GET])
+@menu.route("/menuList",methods=[METHODTYPE.GET])
 @jwt_required()
 def get_menu_list():
     menu_list = queryToDict(db.session.query(Menu).all())

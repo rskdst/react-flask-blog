@@ -25,7 +25,6 @@ user = Blueprint('user', __name__, url_prefix='/api/user')
 @user.route("/user",methods=[METHODTYPE.POST])
 def get_users():
     user_list = db.session.query(User.id,User.username,User.phone,User.id_card,User.mail,User.state,User.create_date,User.update_date,User.role_id,Role.rolename).filter(User.role_id==Role.id).all()
-    print(user_list)
     user = queryToDict(user_list)
     
     return jsonApi(user)

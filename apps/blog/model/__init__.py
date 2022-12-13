@@ -42,7 +42,6 @@ class Menu(BaseModel):
 # 角色
 class Role(BaseModel):
     rolename = Column(String(10),unique=True,comment="角色名字")
-
     # did = Column(Integer,ForeignKey("department.id"),default=1,server_default="1",nullable=False,comment="所属部门")
     create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'),comment="创建时间")
     update_date = Column(DateTime,  server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),comment="更新时间")
