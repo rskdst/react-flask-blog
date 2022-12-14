@@ -38,9 +38,9 @@ def add_user():
         if have_user:
             return jsonApi("用户已存在，请登录",201)
         user = User(
-            username=data["username"],
-            password=data["password"],
-            phone=data["phone"]
+            username=data.get("username",None),
+            password=data.get("password",None),
+            phone=data.get("phone",None)
         )
         db.session.add(user)
         db.session.commit()
