@@ -14,7 +14,7 @@ from apps.utils.interface import jsonApi
 from apps.utils.db import queryToDict
 from apps.blog.model import Menu,Role,db
 from sqlalchemy import exists,or_
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required,get_jwt_identity
 
 from flask_jwt_extended import create_access_token
 
@@ -24,9 +24,16 @@ role = Blueprint('role', __name__, url_prefix='/api/role')
 @role.route("/role",methods=[METHODTYPE.GET])
 @jwt_required()
 def get_role():
-    role_list = queryToDict(db.session.query(Role).all())
-    return jsonApi(role_list)
+    role = queryToDict(db.session.query(Role).all())
+    return jsonApi(role)
 
+@role.route("/roleList",methods=[METHODTYPE.GET])
+@jwt_required()
+def get_roleList():
+    role_id = request.args.get("id")
+    role = db.session.query(Role).filter(Role.id==role_id).first()
+    role_list = [x.id for x in role.menus]
+    return jsonApi(role_list)
 
 @role.route("/addMenuPermission",methods=[METHODTYPE.POST])
 @jwt_required()
