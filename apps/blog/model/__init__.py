@@ -11,7 +11,7 @@
 import datetime
 from apps.utils.db import db
 from sqlalchemy.orm import relationship
-from sqlalchemy import Column,String,Integer,text,DateTime,ForeignKey,Table
+from sqlalchemy import Column,String,Integer,text,DateTime,ForeignKey,Table,TEXT
 
 class BaseModel(db.Model):
     __abstract__ = True
@@ -69,6 +69,7 @@ class User(BaseModel):
     update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),comment="更新时间")
     role_id = Column(Integer,ForeignKey("role.id"),default=1,server_default="1",nullable=False,comment="角色id")
 
+    articles = relationship("Article", backref="user")
     def to_dict(self,rolename):
         return {
             "username":self.username,
@@ -87,3 +88,56 @@ class User(BaseModel):
         """校验密码"""
         return password == self.password
 
+
+# 文章标签表
+article_to_tag = Table(
+    "article_to_tag",db.metadata,
+    Column("article_id",Integer,ForeignKey("article.id")),
+    Column("tag_id",Integer,ForeignKey("articleTag.id")),
+)
+# 文章专栏表
+article_to_category = Table(
+    "article_to_category",db.metadata,
+    Column("article_id",Integer,ForeignKey("article.id")),
+    Column("category_id",Integer,ForeignKey("articleCategory.id")),
+)
+
+# 文章表
+class Article(BaseModel):
+    title = Column(String(100),nullable=True,comment="标题")
+    content = Column(TEXT,nullable=True,comment="文章内容")
+    cover_type = Column(Integer,nullable=True,comment="封面类型")
+    cover_pictrue = Column(String(200),comment="封面图片")
+    abstract = Column(String(256),nullable=True,comment="摘要")
+    article_type = Column(Integer,nullable=True,comment="文章类型")
+    original_link = Column(String(200),comment="原文链接")
+    pulish_type = Column(Integer,nullable=True,comment="发布形式")
+    content_level = Column(Integer,nullable=True,comment="内容等级")
+    comment_count = Column(Integer,server_default="0",comment="评论数")
+    digg_count = Column(Integer,server_default="0",comment="点赞数")
+    view_count = Column(Integer,server_default="0",comment="浏览量")
+    user_id = Column(Integer,ForeignKey("user.id"),nullable=False,comment="用户id")
+    create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'), comment="创建时间")
+    update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
+                         comment="更新时间")
+    state = Column(Integer,server_default="0",comment="是否删除")
+
+    tags = relationship("ArticleTag", secondary=article_to_tag, backref="articles")
+    categorys = relationship("ArticleCategory", secondary=article_to_category, backref="articles")
+
+
+# 文章标签表
+class ArticleTag(BaseModel):
+    __tablename__ = "articleTag"
+    tag_name = Column(String(50),nullable=True,comment="标签名称")
+    create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'), comment="创建时间")
+    update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
+                         comment="更新时间")
+
+# 文章专栏表
+class ArticleCategory(BaseModel):
+    __tablename__ = "articleCategory"
+    category_name = Column(String(50),nullable=True,comment="专栏名称")
+    create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'), comment="创建时间")
+    update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
+                         comment="更新时间")

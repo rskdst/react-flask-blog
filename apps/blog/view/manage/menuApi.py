@@ -24,8 +24,8 @@ def get_tree_menu():
     identity = get_jwt_identity()
     userid = identity.get("userid")
     user = db.session.query(User).filter(User.id==userid).first()
-    # menu_list = queryToDict(user.role.menus)
-    menu_list = queryToDict(db.session.query(Menu).all())
+    menu_list = queryToDict(user.role.menus)
+    # menu_list = queryToDict(db.session.query(Menu).all())
     routes = get_trees(menu_list)
     return jsonApi(routes)
 
@@ -47,6 +47,13 @@ def add_menu():
         weight=data["weight"],
         state=data['state']
     )
+    identity = get_jwt_identity()
+    username = identity.get("username")
+
+    if username == "admin":
+        userid = identity.get("userid")
+        user = db.session.query(User).filter(User.id == userid).first()
+        menu_obj.roles = [user.role]
     db.session.add(menu_obj)
     db.session.commit()
 
