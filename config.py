@@ -26,6 +26,9 @@ class DevelopmentConfig(BaseConfig):
     JWT_ACCESS_TOKEN_EXPIRES = os.environ.get('JWT_ACCESS_TOKEN_EXPIRES') or 3600
     PROPAGATE_EXCEPTIONS = True
 
+    # 文件上传地址
+    UPLOAD_PATH = '/Users/jliu/Desktop/编程/blog/apps/static'
+
 
 class TestingConfig(DevelopmentConfig):
     pass

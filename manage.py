@@ -22,6 +22,7 @@ __all__ = ['main']
 def main():
     app = create_app()
     args = parse_args()
+    app.debug=False
     CORS(app, supports_credentials=True) # 允许跨域
     if args.cmd.isdigit():
         cmd = 'runserver'
