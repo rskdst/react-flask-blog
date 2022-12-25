@@ -45,7 +45,8 @@ def add_menu():
         type=data['type'],
         permission=data['permission'],
         weight=data["weight"],
-        state=data['state']
+        state=data['state'],
+        show=data['show'],
     )
     identity = get_jwt_identity()
     username = identity.get("username")

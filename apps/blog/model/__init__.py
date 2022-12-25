@@ -36,6 +36,7 @@ class Menu(BaseModel):
     permission = Column(String(100),comment="权限标记")
     weight = Column(Integer,nullable=False,comment="权重")
     state = Column(String(1),comment="是否启用")
+    show = Column(String(1),comment="是否显示在菜单栏")
 
     roles = relationship("Role",secondary=menu_to_role,backref="menus")
 
@@ -70,6 +71,8 @@ class User(BaseModel):
     role_id = Column(Integer,ForeignKey("role.id"),default=1,server_default="1",nullable=False,comment="角色id")
 
     articles = relationship("Article", backref="user")
+
+    user_categorys = relationship("ArticleCategory", backref="categorys_user")
     def to_dict(self,rolename):
         return {
             "username":self.username,
@@ -89,12 +92,6 @@ class User(BaseModel):
         return password == self.password
 
 
-# 文章标签表
-article_to_tag = Table(
-    "article_to_tag",db.metadata,
-    Column("article_id",Integer,ForeignKey("article.id")),
-    Column("tag_id",Integer,ForeignKey("articleTag.id")),
-)
 # 文章专栏表
 article_to_category = Table(
     "article_to_category",db.metadata,
@@ -113,6 +110,7 @@ class Article(BaseModel):
     original_link = Column(String(200),comment="原文链接")
     pulish_type = Column(Integer,nullable=True,comment="发布形式")
     content_level = Column(Integer,nullable=True,comment="内容等级")
+    tags = Column(db.String(200),nullable=True,comment="文章标签")
     comment_count = Column(Integer,server_default="0",comment="评论数")
     digg_count = Column(Integer,server_default="0",comment="点赞数")
     view_count = Column(Integer,server_default="0",comment="浏览量")
@@ -122,22 +120,25 @@ class Article(BaseModel):
                          comment="更新时间")
     state = Column(Integer,server_default="0",comment="是否删除")
 
-    tags = relationship("ArticleTag", secondary=article_to_tag, backref="articles")
+    # tags = relationship("ArticleTag", secondary=article_to_tag, backref="articles")
     categorys = relationship("ArticleCategory", secondary=article_to_category, backref="articles")
 
 
-# 文章标签表
-class ArticleTag(BaseModel):
-    __tablename__ = "articleTag"
-    tag_name = Column(String(50),nullable=True,comment="标签名称")
-    create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'), comment="创建时间")
-    update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
-                         comment="更新时间")
+# # 文章标签表
+# class ArticleTag(BaseModel):
+#     __tablename__ = "articleTag"
+#     tag_name = Column(String(50),nullable=True,comment="标签名称")
+#     create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'), comment="创建时间")
+#     update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
+#                          comment="更新时间")
 
 # 文章专栏表
 class ArticleCategory(BaseModel):
     __tablename__ = "articleCategory"
-    category_name = Column(String(50),nullable=True,comment="专栏名称")
+    category_name = Column(String(50),nullable=True,unique=True,comment="专栏名称")
+    category_introduction = Column(String(100),nullable=True,comment="专栏简介")
+    category_picture = Column(String(200),comment="专栏配图")
     create_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'), comment="创建时间")
     update_date = Column(DateTime, server_default=text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
                          comment="更新时间")
+    user_id = Column(Integer, ForeignKey("user.id"), nullable=False, comment="用户id")
