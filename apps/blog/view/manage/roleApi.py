@@ -27,7 +27,8 @@ def get_role():
     role = queryToDict(db.session.query(Role).all())
     return jsonApi(role)
 
-@role.route("/roleList",methods=[METHODTYPE.GET])
+# 获取角色拥有的菜单权限
+@role.route("/getMenuIdsByRole",methods=[METHODTYPE.GET])
 @jwt_required()
 def get_roleList():
     role_id = request.args.get("id")
