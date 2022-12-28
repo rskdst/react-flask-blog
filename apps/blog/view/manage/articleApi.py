@@ -39,17 +39,33 @@ def save():
         article_type = form.get("article_type"),
         original_link = form.get("original_link"),
         pulish_type = form.get("pulish_type"),
+        content_level = form.get("content_level"),
         tags = form.get("tags[]"),
         user_id=userid
     )
-    # categorys = form.get("category[]").split(",")
-    # # categorys = [ArticleCategory(category_name=x) for x in categorys]
-    # for category in db.session.query(ArticleCategory).filter(ArticleCategory.category_name.in_(categorys)).all():
-    #     ca
-    # db.session.bulk_save_objects(categorys)
-    # db.session.flush()
-    # db.session.commit()
+    categorys = form.get("category[]").split(",")
+    category_objs = db.session.query(ArticleCategory).filter(ArticleCategory.id.in_(categorys)).all()
+    article.categorys = category_objs
+    db.session.add(article)
+    db.session.commit()
     return jsonApi("保存成功")
+
+# 获取文章数据
+@article.route("/list",methods=[METHODTYPE.GET])
+@jwt_required()
+def get_article_list():
+    jwt_identity = get_jwt_identity()
+    userid = jwt_identity["userid"]
+    articles = db.session.query(Article).filter(Article.user_id==userid and Article.state == 1).all()
+    all = len(articles)
+    enable = len([x for x in articles if x.content_level == 1])
+    private = all-enable
+    articles = queryToDict(articles)
+    return jsonApi({
+        "count":{"all":all,"enable":enable,"private":private},
+        "list":articles
+    })
+
 
 # 添加专栏
 @article.route("/addCategory",methods=[METHODTYPE.POST])
@@ -114,3 +130,15 @@ def show_file(userid, filename):
     response = make_response(image_data)
     response.headers['Content-Type'] = 'image/png'
     return response
+
+
+# 获取文章相关数据
+@article.route("/getQueryCriteria",methods=[METHODTYPE.GET])
+@jwt_required()
+def get_query_criteria():
+    jwt_identity = get_jwt_identity()
+    userid = jwt_identity["userid"]
+    user = db.session.query(User).filter(User.id==userid).first()
+    categorys = queryToDict(user.user_categorys)
+    date = list(set(x.create_date.year for x in user.articles))
+    return jsonApi({"categorys":categorys,"date":date})
